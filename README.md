@@ -12,6 +12,7 @@ Quick access:
 
 To do:
 
-- [] use custom model for `server_Dat.py`
-- [] change model handling for `server_Hiep.py`
-- [] Enjoy the work :partying_face:
+- [ ] use custom model for `server_Dat.py`
+- [ ] change model handling for `server_Hiep.py`
+- [ ] Enjoy the work :partying_face:
+ 
