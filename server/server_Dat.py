@@ -147,6 +147,7 @@ def results_handling(results):
     dict = {}
     for index, element in enumerate(results['detection_scores'][0] > 0.5):
         if element == True:
+            # print(element)
             labels.append(LABELS[int(results['detection_classes'][0][index]) - 1])
             boxes = results["detection_boxes"][0][index].numpy()
             position.append((boxes[0] + boxes[2])/2)
