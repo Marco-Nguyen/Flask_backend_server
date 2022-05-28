@@ -4,11 +4,11 @@ It's not so hard to understand, isn't it? :dizzy_face:
 
 Quick access:
 
-1. [a relative link](client): `client.py` - run on client side, eg: Raspberry Pi
-2. [a relative link](messages): sample messages send and receive 
-3. [a relative link](server): several servers for testing and using. Up to now, `server_Dat.py` is the most complete one.
-4. [a relative link](static): some sample images to test the system
-5. [a relative link](test): just a draft to test the model
+1. [client](client): `client.py` - run on client side, eg: Raspberry Pi
+2. [messages](messages): sample messages send and receive 
+3. [server](server): several servers for testing and using. Up to now, `server_Dat.py` is the most complete one.
+4. [static](static): some sample images to test the system
+5. [test](test): just a draft to test the model
 
 To do:
 
