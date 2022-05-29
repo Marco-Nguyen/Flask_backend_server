@@ -1,0 +1,8 @@
+opencv-python
+Flask
+Flask-Cors
+gtts
+tensorflow
+requests
+subprocess
+playsound=1.2.2
