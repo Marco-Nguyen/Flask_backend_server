@@ -4,7 +4,8 @@ import argparse
 import playsound
 
 #url = "100.99"
-IMG_PATH = r"static//"
+# IMG_PATH = r"static//"
+IMG_PATH = r"D:\Python\Pycharm\Flask\backend_server\Flask_backend_server\static\\"
 path_img = "person.jpg"
 
 parser = argparse.ArgumentParser()
@@ -23,11 +24,19 @@ print("Image Sent!")
 # convert server response into JSON format.
 # print(r.json())
 
-# Download file
-url_2 = url.replace("/predict", '/mp3')
+## Download file
+url_2 = url.replace("/predict", '/json')
 r_2 = requests.get(url)
+# r_3 = requests.get(url_2)
+print(r_2)
 # print(r.headers.get('content-type'))
 
-open('message-receive.mp3', 'wb').write(r.content)
-print("Playing Sound")
-playsound.playsound('message-receive.mp3')
+## Play sound in RPI
+# open('message-receive.mp3', 'wb').write(r.content)
+# print("Playing Sound")
+# playsound.playsound('message-receive.mp3')
+
+# Read txt file
+with open(r"D:\Python\Pycharm\Flask\backend_server\Flask_backend_server\messages\results.txt", 'r') as text_file:
+    result = text_file.readline()
+    print(result)

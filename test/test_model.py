@@ -122,45 +122,46 @@ LABELS = ['person',
 Box order: [ymin, xmin, ymax, xmax]
 """
 
-img = Image.open(r"D:\Python\Pycharm\Flask\backend_server\static\beach.jpg")
-img = img.resize((320, 320))
+img = Image.open(r"D:\Python\Pycharm\Flask\backend_server\Flask_backend_server\static\cucumber-1.jpg")
+img = img.resize((416, 416))
 # img.show()
 img = tf.convert_to_tensor(tf.keras.utils.img_to_array(img))
-img = tf.cast(img, tf.uint8)
+# img = tf.cast(img, tf.uint8)
 img = tf.expand_dims(img, axis=0)
 print(type(img))
 
-my_model= tf.saved_model.load(r"D:\covid-diagnosis-flask\ckpt\detection\saved_model")
+my_model= tf.saved_model.load(r"D:\Python\Pycharm\AI-in-agriculture\weights\Smart-agriculture\best_saved_model")
 results = my_model(img)
 
+print(results[0][0])
 labels = []
 boxes = []
 position = []
 
 # Extract label with scores > threshold
-for index, element in enumerate(results['detection_scores'][0] > 0.5):
-    if element == True:
-        labels.append(LABELS[int(results['detection_classes'][0][index]) - 1])
-        boxes.append(results["detection_boxes"][0][index].numpy())
+# for index, element in enumerate(results['detection_scores'][0] > 0.5):
+#     if element == True:
+#         labels.append(LABELS[int(results['detection_classes'][0][index]) - 1])
+#         boxes.append(results["detection_boxes"][0][index].numpy())
 
 # Find center x coordinate
-for box in boxes:
-    xc = (box[0] + box[2])/2
-    # yc = (box[1] + box[3])/2
-    position.append(xc)
-
-dict = {}
+# for box in boxes:
+#     xc = (box[0] + box[2])/2
+#     # yc = (box[1] + box[3])/2
+#     position.append(xc)
+#
+# dict = {}
 
 # Create dictionary contains label with its corresponding center coordinate
-for i, label in enumerate(labels):
-    dict[label] = position[i]
-
-print(dict)
+# for i, label in enumerate(labels):
+#     dict[label] = position[i]
+#
+# print(dict)
 
 # Sort according to center coordinate
 # dict = {'key': 0.1, 'dog': 0.9, 'cat': 0.5, 'mouse': 0.4}
-a = sorted(dict.items(), key=lambda x: x[1])
-print(a)
+# a = sorted(dict.items(), key=lambda x: x[1])
+# print(a)
 
 # print(results['detection_scores'][0] > 0.5)
 # print(results['detection_classes'][0])
